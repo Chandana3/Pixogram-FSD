@@ -1,0 +1,92 @@
+<%- include('includes/head.ejs') %>
+    <script type="text/javascript">
+        function validateDetails()
+        {
+            try {
+
+
+            } catch(err)
+            {
+
+            }
+            alert("log in successfully");
+            //return false;
+
+        }
+
+    </script>
+
+
+
+</head>
+<body class="container">
+
+<%- include('includes/nav.ejs') %>
+
+<div class="row">
+    <div class="col-md-4">
+
+        <%- include('includes/menu.ejs') %>
+    </div>
+
+    <div class="col-md-6">
+        <br/>
+        <br/>
+        <h1 class="text-center">Login Form</h1>
+
+        <h2 class="text-center">
+        <% if (data.errormsg) { %>
+        <%= data.errormsg %>
+        <% } %>
+
+
+        </h2>
+        <form id="form1" name="form1" method="POST" action='/users/login'>
+        <div class="align-items-center text-center">
+        <table class="center">
+        <tr>
+            <td>
+                <div class="float-left"><label class="input" for="loginId">Login ID:</label></div>
+                <div class="float-right">:</div>
+
+            </td>
+            <td>
+                <div class='container'>
+                    <input type="text" class="form-control" id="loginId" name="loginId" pattern="^[A-Za-z][A-Za-z0-9 -]+$" required="true" placeholder="Login Id"/>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="float-left"><label class="input" for="passwd">Password:</label></div>
+                <div class="float-right">:</div>
+
+            </td>
+            <td>
+                <div class='container'>
+                    <input type="password" class="form-control" id="passwd" name="passwd" pattern="^[A-Za-z0-9#%$! -]+$" required="true" placeholder="Password"/>
+                </div>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center">
+                <button type="Submit" onclick="validateDetails()" class="btn btn-primary">Submit</button>
+                <button type="button" onclick="this.form.reset();" class="btn btn-secondary">Clear</button>
+
+            </td>
+
+        </tr>
+        <tr> <p>Do not have an account? <a href="/users/signup">Sign Up</a></p>
+        </tr>
+
+        </table>
+        </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

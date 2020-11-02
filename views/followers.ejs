@@ -1,0 +1,44 @@
+<%- include('includes/head.ejs') %>
+
+
+</head>
+<script src="/javascripts/common.js"></script>
+<body  class="container">
+   
+<%- include('includes/nav.ejs') %>
+<p style="color: white;font-size: 28px;"> see all the Followers here</p>
+
+<% if (!!data.customer) { %>
+    <% if (!!data.followers) { %>
+
+    <% if (!!data.users) { %>
+        <% data.users.forEach(function(cust) { %>
+    <div>
+        <img src="data:image/<%=cust.profilepic.contentType%>;base64,
+                     <%=cust.profilepic.imgdata.toString('base64')%>" width="300" height="250">
+        <div>
+            <p><%= cust.firstname %></p>
+            <p><%= cust.lastname %></p>
+
+
+            <button onClick="unFollow('<%= data.customer._id %>','<%= cust._id %>')" >UnFollow </button>
+
+
+
+        </div>
+    </div>
+    <% })
+    }
+    } else {
+    %>
+
+    <p>No Followers found</p>
+<%}
+    }
+    %>
+
+
+
+
+</body>
+</html>

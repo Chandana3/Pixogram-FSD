@@ -1,0 +1,124 @@
+<%- include('includes/head.ejs') %>
+
+</head>
+<script src="/javascripts/common.js"></script>
+<body class="container">
+<%- include('includes/nav.ejs') %>
+
+
+<div class="row">
+    <div class="col-md-4">
+
+        <%- include('includes/menu.ejs') %>
+    </div>
+
+    <div class="col-md-6">
+
+        <h1>New Media Page</h1>
+        <form id="form1" name="form1" method ="POST" action="/media/add-media" enctype="multipart/form-data">
+            <div>
+                <table class="center">
+                    <tr>
+                        <td>
+                            <div class="float-left"><label class="input" for="userId">userId:</label></div>
+                            <div class="float-right">:</div>
+
+                        </td>
+                        <td>
+                            <div class='container'>
+                                <input type="text" class="form-control" id="userId" name="userId" value="<%= data.customer._id %>" required="true" placeholder="Username"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="float-left"><label class="input" for="mediatitle">Media Title:</label></div>
+                            <div class="float-right">:</div>
+
+                        </td>
+                        <td>
+                            <div class='container'>
+                                <input type="text" class="form-control" id="mediatitle" name="mediatitle" required="true" placeholder="Media Title"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="float-left"><label class="input" for="description">Description:</label></div>
+                            <div class="float-right">:</div>
+
+                        </td>
+                        <td>
+                            <div class='container'>
+                                <input type="text" class="form-control" id="description" name="description" required="true" placeholder="Description"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="float-left"><label class="input" for="tags">Tags:</label></div>
+                            <div class="float-right">:</div>
+
+                        </td>
+                        <td>
+                            <div class='container'>
+                                <input type="text" class="form-control" id="tags" name="tags" required="true" placeholder="Tags"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="float-left"><label class="input" for="effects">Effects:</label></div>
+                            <div class="float-right">:</div>
+
+                        </td>
+                        <td>
+                            <div class='container'>
+                                <input type="text" class="form-control" id="effects" name="effects" required="true" placeholder="Effects"/>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <div class="float-left"><label class="input" for="media">Media:</label></div>
+                            <div class="float-right">:</div>
+
+                        </td>
+                        <td>
+                            <div class='container'>
+                                <input type="file" class="form-control" id="media" name="media" required="true" placeholder="Media"/>
+                            </div>
+
+
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="2" align="center">
+                            <button type="Submit" onclick="validateDetails()" class="btn btn-primary">Submit</button>
+                            <button type="button" onclick="this.form.reset();" class="btn btn-secondary">Clear</button>
+
+                        </td>
+
+                    </tr>
+
+
+
+
+
+
+                    </tr>
+                </table>
+
+
+
+            </div>
+        </form>
+    </div>
+
+
+
+</body>
+</html>

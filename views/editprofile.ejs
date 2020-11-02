@@ -1,0 +1,160 @@
+<%- include('includes/head.ejs') %>
+    <script type="text/javascript">
+        function validateDetails()
+        {
+            /*
+            try {
+
+
+                        let pwd = document.forms["form1"]["passwd"].value;
+                        let cnfpwd = document.forms["form1"]["confirmPassword"].value;
+                        alert("Inside");
+                        if(pwd!=cnfpwd)
+                            alert("Password and confirm Password should be same");
+
+                        } catch(err)
+                        {
+
+                            alert("Inside error"+err);
+                        }
+                        alert("Inside");
+                        */
+
+                return false;
+
+            }
+
+    </script>
+
+
+</head>
+<body class="container">
+<%- include('includes/nav.ejs') %>
+
+<div class="row">
+    <div class="col-md-4">
+
+        <%- include('includes/menu.ejs') %>
+    </div>
+
+    <div class="col-md-6">
+        <br/>
+        <br/>
+        <h1 class="text-center">Profile Form</h1>
+
+
+        <form id="form1" name="form1" onSubmit="return false">
+            <div>
+                <table class="center">
+                    <tr>
+                        <td>
+                            <div class="float-left"><label class="input" for="firstName">First Name</label></div>
+                            <div class="float-right">:</div>
+
+                        </td>
+                        <td>
+                            <div class='container'>
+                                <input type="text" class="form-control" id="firstName"
+                                        <% if (!!data.customer) { %>
+                                       value="<%= data.customer.firstname %>"
+
+                                        <% } %>
+
+                                       name="firstName" required="true" placeholder="First Name"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="float-left"><label class="input" for="lastName">Last Name</label></div>
+                            <div class="float-right">:</div>
+
+                        </td>
+                        <td>
+                            <div class='container'>
+                                <input type="text" class="form-control" id="lastName"
+                                <% if (!!data.customer) { %>
+                                       value="<%= data.customer.lastname %>"
+
+                                        <% } %>
+                                       name="lastName" required="true" placeholder="Last Name"/>
+                            </div>
+                        </td>
+                    </tr>
+                   
+                    <tr>
+                        <td>
+                            <div class="float-left"><label class="input" for="email">Email ID</label></div>
+                            <div class="float-right">:</div>
+
+                        </td>
+                        <td>
+                            <div class='container'>
+                                <input type="email" class="form-control" id="email"
+                                <% if (!!data.customer) { %>
+                                       value="<%= data.customer.emailid %>"
+
+                                        <% } %>
+                                       name="email" required="true" placeholder="Email ID"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="float-left"><label class="input" for="dateofBirth">Date of Birth</label></div>
+                            <div class="float-right">:</div>
+                        </td>
+                        <td>
+                            <div class='container'>
+                                <input type="date" class="form-control" id="dateofBirth"
+                                <% if (!!data.customer) { %>
+                                       value="<%= data.customer.dateofbirth %>"
+
+                                        <% } %>
+                                       name="dateofBirth" required="true" placeholder="Date of Birth"/>
+                            </div>
+                        </td>
+                    </tr>
+                  
+                    <tr>
+                        <td>
+                            <div class="float-left"><label class="input" for="profilePicture">Profile Picture</label></div>
+                            <div class="float-right">:</div>
+
+                        </td>
+                        <td>
+                            <div class='container'>
+                                <input type="file" class="form-control" id="profilePicture" name="profilePicture" required="true" placeholder="Profile picture"/>
+                            </div>
+
+
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="2" align="center">
+                            <button type="Submit" onclick="validateDetails()" class="btn btn-primary">Submit</button>
+                            <button type="button" onclick="this.form.reset();" class="btn btn-secondary">Clear</button>
+
+                        </td>
+
+                    </tr>
+
+
+
+
+
+
+                    </tr>
+                </table>
+
+
+
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

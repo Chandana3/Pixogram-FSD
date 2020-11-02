@@ -1,0 +1,53 @@
+.vertical-menu {
+  width: 150px;
+}
+
+.vertical-menu a {
+  background-color: #4A235A;
+  color:whitesmoke;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.vertical-menu a:hover {
+  background-color:#C39BD3;
+}
+
+.vertical-menu a.active {
+  background-color: #4CAF50;
+  color: black;
+}
+
+.d-flex{
+background-color: #4A235A ;
+font-family: Arial, Helvetica, sans-serif;
+font-style: italic;
+}
+
+body{
+  background-color:#BB8FCE;
+}
+
+.input{
+  color:black;
+  margin-top: 20px;
+  border-radius: none;
+  font-size: 24px;
+}
+
+.btn{
+  width: 40%;
+  margin-top: 20px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+#firstName{
+border-color: black;
+}
+
+.account{
+ 
+  margin-top: 75px;
+}

@@ -1,0 +1,22 @@
+<div class="d-flex bd-highlight bd-dark" style="font-size: 30px;">
+    <div class="p-2 flex-grow-1 bd-highlight"><a href="#" class="nav-link text-white font-weight-bolder">Pixogram</a></div>
+
+    <div class="p-2 bd-highlight"><a href="/" class="nav-link text-white">Home</a></div>
+
+    <% if (!!data.customer) { %>
+        <div class="p-2 bd-highlight"><a href="/account/update" class="nav-link text-white">Account</a></div>
+        <div class="p-2 bd-highlight"><a href="/followers/<%= data.customer._id %>" class="nav-link text-white">Followers</a></div>
+        <div class="p-2 bd-highlight"><a href="/upload/<%= data.customer._id %>" class="nav-link text-white">Upload Media</a></div>
+        <div class="p-2 bd-highlight"><a href="/media/<%= data.customer._id %>" class="nav-link text-white">My Media</a></div>
+    <% }
+    else {
+    %>
+        <div class="p-2 bd-highlight"><a href="/users/login" class="nav-link text-white">Login</a></div>
+        <div class="p-2 bd-highlight"><a href="/users/signup" class="nav-link text-white">Register</a></div>
+    <%
+    }%>
+
+
+
+
+</div>

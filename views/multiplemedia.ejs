@@ -1,0 +1,37 @@
+<%- include('includes/head.ejs') %>
+
+</head>
+<script src="/javascripts/common.js"></script>
+<body class="container">
+<%- include('includes/nav.ejs') %>
+
+
+<div class="row">
+    <div class="col-md-4">
+
+        <%- include('includes/menu.ejs') %>
+    </div>
+
+    <div class="col-md-6">
+        <h1>Multiple Media Page</h1>
+
+
+
+        <form action="/media/many"  enctype="multipart/form-data" method="POST">
+            <label class="input" style="font-size: 30px;">Select images:</label>
+             <input type="file"name="image" multiple />
+
+            <input type="text" class="form-control" id="userId" name="userId" value="<%= data.customer._id %>" required="true" placeholder="Username"/>
+            <input type="submit" style="margin-top: 20px;height: 50%;" value="Upload your files"/>
+        </form>
+
+    </div>
+</div>
+
+
+
+
+
+</body>
+</html>
+
